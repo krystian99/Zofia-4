@@ -1,52 +1,35 @@
 #include <iostream>
-#include <string>
 
 using namespace std;
 
-const int MAX = 256;
-
-int tab[MAX]; // tablica wyzerowana
+const int MAX = 999999;
 
 int main()
 {
-	string str;
-
 	int t;
-
 	cin >> t;
-	cin.get();
 
-	for (int i = 0; i < t; ++i)
+
+	int g1, g2;
+	//cin >> g1 >> g2;
+
+	for (int j = 0; j < t; j++)
 	{
-		getline(cin, str);
+		cin >> g1 >> g2;
 
-		for (int j = 0; j < str.size(); j++)
+		for (int i = 1; i < MAX; i++)
 		{
-			char c = str[j];
-			tab[c]++;
+			int x = i % g1;
+			int y = i % g2;
+
+			if (x == 0 && y == 0)
+			{
+				cout << i << endl;
+				break;
+			}
 		}
-
 	}
-
-	/*for (int i = 97; i <= 122; ++i)
-	{
-		if (tab[i] > 0)
-			cout << char(i) << " " << tab[i] << endl;
-
-	}*/
-
-	for (char i = 'a'; i <= 'z'; ++i)
-	{
-		if (tab[i] > 0)	
-			cout << i << " " << tab[i] << endl;
-
-	}
-
-	for (char i = 'A'; i <= 'Z'; i++)
-	{
-		if (tab[i] > 0)
-			cout << i << " " << tab[i] << endl;
-	}
+	
 
 	return 0;
 }
