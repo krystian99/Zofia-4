@@ -9,22 +9,24 @@ int main()
 	int t;
 	cin >> t;
 
-	string str1, str2;
+	int podstawa, wykladnik;
 	
 	for (int i = 0; i < t; i++)
 	{
-		cin >> str1 >> str2;
+		cin >> podstawa >> wykladnik;
 
-		int size;
-		if (str1.size() < str2.size()) size = str1.size();
-		else size = str2.size();
+		int pot1j = podstawa%10;
+		int pot2j = (podstawa * podstawa) % 10;
+		int pot3j = (podstawa * podstawa*podstawa) % 10;
+		int pot4j = (podstawa * podstawa * podstawa*podstawa) % 10;
 
-		for (int i = 0; i < size; i++)
-		{
-			cout << str1[i] << str2[i];
-		}
+		int tab[4] = { pot1j, pot2j, pot3j, pot4j };
 
-		cout << endl;
+		int reszta=wykladnik%4;
+
+
+		cout << tab[reszta] << endl;
 	}
+
 	return 0;
 }
