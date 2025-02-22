@@ -1,35 +1,30 @@
 #include <iostream>
+#include <cstring>
 
 using namespace std;
 
-const int MAX = 999999;
 
 int main()
 {
 	int t;
 	cin >> t;
 
-
-	int g1, g2;
-	//cin >> g1 >> g2;
-
-	for (int j = 0; j < t; j++)
-	{
-		cin >> g1 >> g2;
-
-		for (int i = 1; i < MAX; i++)
-		{
-			int x = i % g1;
-			int y = i % g2;
-
-			if (x == 0 && y == 0)
-			{
-				cout << i << endl;
-				break;
-			}
-		}
-	}
+	string str1, str2;
 	
+	for (int i = 0; i < t; i++)
+	{
+		cin >> str1 >> str2;
 
+		int size;
+		if (str1.size() < str2.size()) size = str1.size();
+		else size = str2.size();
+
+		for (int i = 0; i < size; i++)
+		{
+			cout << str1[i] << str2[i];
+		}
+
+		cout << endl;
+	}
 	return 0;
 }
